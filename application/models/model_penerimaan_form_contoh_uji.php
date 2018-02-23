@@ -116,5 +116,18 @@ class model_penerimaan_form_contoh_uji extends CI_Model
 
   }
 
+  function get_detail($param=array())
+  {
+      $this->db->select("penerimaan_contoh.*,penerimaan_contoh_jenis.*");
+      $this->db->from("penerimaan_contoh");
+      $this->db->join("penerimaan_contoh_jenis", "penerimaan_contoh.id_penerimaan = penerimaan_contoh_jenis.id_penerimaan");
+      $this->db->where($param);
+      $query = $this->db->get();
+
+    //$query = $this->db->query('SELECT * FROM penerimaan_contoh RIGHT JOIN penerimaan_contoh_jenis ON penerimaan_contoh.id_penerimaan=penerimaan_contoh_jenis.id_penerimaan WHERE penerimaan_contoh.id_penerimaan = 26');
+
+    return $query;
+  }
+
 }
 

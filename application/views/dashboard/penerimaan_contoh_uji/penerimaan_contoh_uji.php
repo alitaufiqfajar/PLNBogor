@@ -51,9 +51,6 @@
             <th>No Administrasi</th>
             <th>Tanggal Terima</th>
             <th>Nama/Instansi Pengirim</th>
-            <th>Alamat Pengirim</th>
-            <th>Telp/Fax/E-mail Pengirim</th>
-            <th>Kondisi Uji</th>
             <th>Waktu Pengujian</th>
             <th>Jumlah Biaya</th>
             <th>Penerima Contoh</th>
@@ -80,12 +77,6 @@
 
               <td>'.$r->nama_atau_instansi_pengirim.'</td>
 
-              <td>'.$r->alamat_pengirim.'</td>
-
-              <td>'.$r->telp_fax_email_pengirim.'</td>
-
-              <td>'.$r->kondisi_uji.'</td>
-
               <td>'.$r->waktu_pengujian.'</td>
 
               <td>'.$r->jumlah_biaya.'</td>
@@ -97,6 +88,10 @@
               <td>'.anchor('form_penerimaan_contoh_uji/edit/'.$r->id_penerimaan,'<i class="fa fa-pencil"></i>',
 
               array('title' => 'Edit','class' => 'btn bg-purple')).' '.
+
+              anchor('form_penerimaan_contoh_uji/get_detail/'.$r->id_penerimaan,'<i class="fa fa-eye"></i>',
+
+              array('title' => 'View','class' => 'btn bg-green')).' '.
 
               anchor('form_penerimaan_contoh_uji/delete/'.$r->id_penerimaan,'<i class="fa fa-remove"></i>',
 

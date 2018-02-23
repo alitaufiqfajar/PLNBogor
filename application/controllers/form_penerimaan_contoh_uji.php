@@ -102,5 +102,13 @@ class form_penerimaan_contoh_uji extends CI_Controller
 
   }
 
+  function get_detail()
+  {
+    $data=dashboard_data($this);
+    $param= array("penerimaan_contoh.id_penerimaan"=>$this->uri->segment(3));
+    $data['detail_penerimaan'] = $this->model_penerimaan_form_contoh_uji->get_detail($param)->result_array();
+    $this->template->load('templates/dashboard_template','dashboard/penerimaan_contoh_uji/get_detail',$data);
+  }
+
 }
 

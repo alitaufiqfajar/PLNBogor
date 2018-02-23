@@ -26,101 +26,129 @@
 
     </div>
 
-  </div>
-  <!-- BAGIAN 1 -->
-  <div class="box box-primary">
     <?php
 
       echo form_open('form_penerimaan_contoh_uji/input','class="form-horizontal"');
 
       ?>
 
+
+      
+
       <div class="box-body">
         <div class="form-group">
-          <label class="col-sm-3 control-label">No Administrasi</label>
-          <div class="col-sm-6">
+          <label class="col-sm-2 control-label">No Administrasi</label>
+          <div class="col-sm-4">
             <input type="text"  class="form-control" name="no_administrasi" placeholder="No Administrasi" >
           </div>
         </div>
+      </div>
+
+      <div class="box-body">
         <div class="form-group">
-          <label class="col-sm-3 control-label">Nama / Instansi Pengirim</label>
-          <div class="col-sm-6">
+          <label class="col-sm-2 control-label">Nama / Instansi Pengirim</label>
+          <div class="col-sm-4">
             <input type="text"  class="form-control" name="nama_atau_instansi_pengirim" placeholder="Nama / Instansi Pengirim" >
           </div>
         </div>
+      </div>
+
+      <div class="box-body">
         <div class="form-group">
-          <label class="col-sm-3 control-label">Alamat Pengirim</label>
-          <div class="col-sm-6">
+          <label class="col-sm-2 control-label">Alamat Pengirim</label>
+          <div class="col-sm-4">
             <input type="text"  class="form-control" name="alamat_pengirim" placeholder="Alamat Pengirim" >
           </div>
         </div>
+      </div>
+
+      <div class="box-body">
         <div class="form-group">
-          <label class="col-sm-3 control-label">Telp/Fax/E-mail Pengirim</label>
-          <div class="col-sm-6">
+          <label class="col-sm-2 control-label">Telp/Fax/E-mail Pengirim</label>
+          <div class="col-sm-4">
             <input type="text"  class="form-control" name="telp_fax_email_pengirim" placeholder="Telp/Fax/E-mail Pengirim" >
           </div>
         </div>
+      </div>
+
+      <div class="box-body">
         <div class="form-group">
-          <label class="col-sm-3 control-label">Kondisi Uji</label>
-          <div class="col-sm-6">
+          <label class="col-sm-2 control-label">Kondisi Uji</label>
+          <div class="col-sm-4">
             <select name="kondisi_uji" class="form-control select2" style="width: 100%;">
                   <option selected="selected">Normal</option>
                   <option>Abnorma</option>
                 </select>
           </div>
         </div>
+      </div>
+
+      <div class="box-body">
         <div class="form-group">
-          <label class="col-sm-3 control-label">Bentuk</label>
-          <div class="col-sm-6">
+          <label class="col-sm-2 control-label">Bentuk</label>
+          <div class="col-sm-4">
             <input type="text"  class="form-control" name="bentuk" placeholder="Bentuk" >
           </div>
         </div>
+      </div>
+
+      <div class="box-body">
         <div class="form-group">
-          <label class="col-sm-3 control-label">Warna</label>
-          <div class="col-sm-6">
+          <label class="col-sm-2 control-label">Warna</label>
+          <div class="col-sm-4">
             <input type="text"  class="form-control" name="warna" placeholder="Warna" >
           </div>
         </div>
+      </div>
+
+      <div class="box-body">
         <div class="form-group">
-          <label class="col-sm-3 control-label">Bau</label>
-          <div class="col-sm-6">
+          <label class="col-sm-2 control-label">Bau</label>
+          <div class="col-sm-4">
             <input type="text"  class="form-control" name="bau" placeholder="Bau" >
           </div>
         </div>
+      </div>
+
+      <div class="box-body">
         <div class="form-group">
-          <label class="col-sm-3 control-label">Jernih</label>
-          <div class="col-sm-6">
+          <label class="col-sm-2 control-label">Jernih</label>
+          <div class="col-sm-4">
             <input type="text"  class="form-control" name="jernih" placeholder="Jernih" >
           </div>
         </div>
+      </div>
+
+      <div class="box-body">
         <div class="form-group">
-          <label class="col-sm-3 control-label">Keruh</label>
-          <div class="col-sm-6">
+          <label class="col-sm-2 control-label">Keruh</label>
+          <div class="col-sm-4">
             <input type="text"  class="form-control" name="keruh" placeholder="Keruh" >
           </div>
         </div>
+      </div>
+
+      <div class="box-body">
         <div class="form-group">
-          <label class="col-sm-3 control-label">Lainnya</label>
-          <div class="col-sm-6">
+          <label class="col-sm-2 control-label">Lainnya</label>
+          <div class="col-sm-4">
             <input type="text"  class="form-control" name="lainnya" placeholder="Lainnya" >
           </div>
         </div>
-      </div>     
-  </div>
+      </div>
 
-  <!-- BAGIAN 2 -->
-  <div class="box box-primary">
-    <div class="box-body">
+      <div class="box-body">
         <div class="form-group">
-          <div class="col-sm-12">
+          <label class="col-sm-2 control-label">Keterangan Contoh</label>
+          <div class="col-sm-6">
             <table class="table table-condensed">
                         <thead>
                             <tr>
-                                <th>Jenis Contoh</th>
-                                <th>Kode Contoh</th>
-                                <th>Jumlah Contoh</th>
-                                <th>Permintaan Pengujian</th>
-                                <th></th>
+                                <th width="300px">Jenis Contoh</th>
+                                <th width="100px">Kode Contoh</th>
+                                <th width="100px">Jumlah Contoh</th>
+                                <th width="100px">Permintaan Pengujian</th>
+                                <th width="80px"></th>
                             </tr>
                         </thead>
                         <!--elemet sebagai target append-->
@@ -145,17 +173,12 @@
                     </table>
           </div>
         </div>
-      </div>
-    </div>
+      </div>      
 
-
-    <!-- BAGIAN 3 -->
-  <div class="box box-primary">    
-
-      <div class="box-body form-horizontal">
+      <div class="box-body">
         <div class="form-group">
-          <label class="col-sm-3 control-label">Waktu Pengujian</label>
-          <div class="col-sm-6">
+          <label class="col-sm-2 control-label">Waktu Pengujian</label>
+          <div class="col-sm-4">
                 <div class="input-group date">
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
@@ -165,54 +188,61 @@
                 <!-- /.input group -->
           </div>
         </div>
+      </div>
 
+      <div class="box-body">
         <div class="form-group">
-          <label class="col-sm-3 control-label">Metode Pengujian</label>
-          <div class="col-sm-6">
+          <label class="col-sm-2 control-label">Metode Pengujian</label>
+          <div class="col-sm-4">
             <input type="text"  class="form-control" name="metode_uji" placeholder="Nama Metode Uji" >
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="col-sm-3 control-label">SDM</label>
-          <div class="col-sm-6">
-            <input type="text"  class="form-control" name="sdm" placeholder="Nama Metode Uji" >
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Peralatan</label>
-          <div class="col-sm-6">
-            <input type="text"  class="form-control" name="peralatan" placeholder="Nama Metode Uji" >
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Bahan Kimia</label>
-          <div class="col-sm-6">
-            <input type="text"  class="form-control" name="bahan_kimia" placeholder="Nama Metode Uji" >
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Jumlah Biaya</label>
-          <div class="col-sm-6">
-            <input type="text"  class="form-control" name="jumlah_biaya" placeholder="Nama Metode Uji" >
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Penerima Contoh</label>
-          <div class="col-sm-6">
-            <input type="text"  class="form-control" name="penerima_contoh" placeholder="Nama Metode Uji" >
           </div>
         </div>
       </div>
 
-  </div>
+      <div class="box-body">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">SDM</label>
+          <div class="col-sm-4">
+            <input type="text"  class="form-control" name="sdm" placeholder="Nama Metode Uji" >
+          </div>
+        </div>
+      </div>
 
-  <!-- TOMBOL SIMPAN -->
-  <div class="box box-primary">
+      <div class="box-body">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Peralatan</label>
+          <div class="col-sm-4">
+            <input type="text"  class="form-control" name="peralatan" placeholder="Nama Metode Uji" >
+          </div>
+        </div>
+      </div>
+
+      <div class="box-body">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Bahan Kimia</label>
+          <div class="col-sm-4">
+            <input type="text"  class="form-control" name="bahan_kimia" placeholder="Nama Metode Uji" >
+          </div>
+        </div>
+      </div>
+
+      <div class="box-body">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Jumlah Biaya</label>
+          <div class="col-sm-4">
+            <input type="text"  class="form-control" name="jumlah_biaya" placeholder="Nama Metode Uji" >
+          </div>
+        </div>
+      </div>
+
+      <div class="box-body">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Penerima Contoh</label>
+          <div class="col-sm-4">
+            <input type="text"  class="form-control" name="penerima_contoh" placeholder="Nama Metode Uji" >
+          </div>
+        </div>
+      </div>
 
       <div class="box-footer">
 
@@ -220,9 +250,58 @@
 
       </div>
 
+    </form>
+
+
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-6">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Quick Example</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputFile">File input</label>
+                  <input type="file" id="exampleInputFile">
+
+                  <p class="help-block">Example block-level help text here.</p>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Check me out
+                  </label>
+                </div>
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+
   </div>
 
-  </form>
+
+  </div>
+
+
 
 </section>
 

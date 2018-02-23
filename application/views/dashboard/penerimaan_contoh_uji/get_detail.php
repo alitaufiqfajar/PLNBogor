@@ -23,6 +23,7 @@
     <div class="box-header with-border">
 
       <h3 class="box-title">Tambah Penerimaan Contoh Uji</h3>
+      <?php var_dump($detail_penerimaan) ?>
 
     </div>
 
@@ -39,7 +40,7 @@
         <div class="form-group">
           <label class="col-sm-3 control-label">No Administrasi</label>
           <div class="col-sm-6">
-            <input type="text"  class="form-control" name="no_administrasi" placeholder="No Administrasi" >
+            <input type="text"  class="form-control" name="no_administrasi" value="<?=$detail_penerimaan['no_administrasi']?>" >
           </div>
         </div>
         <div class="form-group">
