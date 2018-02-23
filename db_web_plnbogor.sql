@@ -1,13 +1,12 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.3
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Oct 18, 2017 at 12:18 PM
--- Server version: 5.6.37
--- PHP Version: 5.6.30
+-- Host: 127.0.0.1
+-- Generation Time: 23 Feb 2018 pada 07.34
+-- Versi Server: 10.1.29-MariaDB
+-- PHP Version: 5.6.32
 
-SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -20,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `u9898414_db_web_plnbogor`
+-- Database: `db_web_plnbogor`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dokumen`
+-- Struktur dari tabel `dokumen`
 --
 
 CREATE TABLE `dokumen` (
@@ -40,7 +39,7 @@ CREATE TABLE `dokumen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `dokumen`
+-- Dumping data untuk tabel `dokumen`
 --
 
 INSERT INTO `dokumen` (`id_dokumen`, `judul`, `namafile`, `ekstensi`, `id_kat_dokumen`, `tgl_dibuat`, `count_click`) VALUES
@@ -55,7 +54,7 @@ INSERT INTO `dokumen` (`id_dokumen`, `judul`, `namafile`, `ekstensi`, `id_kat_do
 -- --------------------------------------------------------
 
 --
--- Table structure for table `galery`
+-- Struktur dari tabel `galery`
 --
 
 CREATE TABLE `galery` (
@@ -66,7 +65,7 @@ CREATE TABLE `galery` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `galery`
+-- Dumping data untuk tabel `galery`
 --
 
 INSERT INTO `galery` (`id_galery`, `judul`, `foto`, `tgl_dibuat`) VALUES
@@ -75,7 +74,7 @@ INSERT INTO `galery` (`id_galery`, `judul`, `foto`, `tgl_dibuat`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori_dokumen`
+-- Struktur dari tabel `kategori_dokumen`
 --
 
 CREATE TABLE `kategori_dokumen` (
@@ -85,7 +84,7 @@ CREATE TABLE `kategori_dokumen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kategori_dokumen`
+-- Dumping data untuk tabel `kategori_dokumen`
 --
 
 INSERT INTO `kategori_dokumen` (`id_kat_dokumen`, `deskripsi`, `tgl_dibuat`) VALUES
@@ -95,7 +94,7 @@ INSERT INTO `kategori_dokumen` (`id_kat_dokumen`, `deskripsi`, `tgl_dibuat`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori_konten`
+-- Struktur dari tabel `kategori_konten`
 --
 
 CREATE TABLE `kategori_konten` (
@@ -105,17 +104,18 @@ CREATE TABLE `kategori_konten` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kategori_konten`
+-- Dumping data untuk tabel `kategori_konten`
 --
 
 INSERT INTO `kategori_konten` (`id_kat_konten`, `deskripsi`, `tgl_dibuat`) VALUES
 (5, 'Berita Harian', '2017-07-27 10:01:13'),
-(6, 'Arikel PLN Bogor', '2017-07-27 10:01:26');
+(6, 'Arikel PLN Bogor', '2017-07-27 10:01:26'),
+(7, 'SUper Cardio', '2018-02-13 12:12:59');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori_portal`
+-- Struktur dari tabel `kategori_portal`
 --
 
 CREATE TABLE `kategori_portal` (
@@ -125,7 +125,7 @@ CREATE TABLE `kategori_portal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `kategori_portal`
+-- Dumping data untuk tabel `kategori_portal`
 --
 
 INSERT INTO `kategori_portal` (`id_kat_portal`, `deskripsi`, `tgl_dibuat`) VALUES
@@ -140,7 +140,7 @@ INSERT INTO `kategori_portal` (`id_kat_portal`, `deskripsi`, `tgl_dibuat`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `konten`
+-- Struktur dari tabel `konten`
 --
 
 CREATE TABLE `konten` (
@@ -156,7 +156,7 @@ CREATE TABLE `konten` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `konten`
+-- Dumping data untuk tabel `konten`
 --
 
 INSERT INTO `konten` (`id_konten`, `nip`, `judul`, `foto`, `isi_deskripsi`, `isi`, `id_kat_konten`, `tgl_dibuat`, `count_click`) VALUES
@@ -184,7 +184,31 @@ INSERT INTO `konten` (`id_konten`, `nip`, `judul`, `foto`, `isi_deskripsi`, `isi
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu`
+-- Struktur dari tabel `list_name`
+--
+
+CREATE TABLE `list_name` (
+  `nama` varchar(123) NOT NULL,
+  `umur` varchar(123) NOT NULL,
+  `asal` varchar(123) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `list_name`
+--
+
+INSERT INTO `list_name` (`nama`, `umur`, `asal`) VALUES
+('ali', 'ali', 'ali'),
+('qwe', 'qwe', 'qwe'),
+('masa', 'masa', 'masa'),
+('123', '123', '123'),
+('iop', 'iop', 'ipo'),
+('hjk', 'hkj', 'hjk');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `menu`
 --
 
 CREATE TABLE `menu` (
@@ -200,7 +224,7 @@ CREATE TABLE `menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `menu`
+-- Dumping data untuk tabel `menu`
 --
 
 INSERT INTO `menu` (`id_menu`, `judul`, `page`, `parent`, `jenis`, `link`, `id_konten`, `icon`, `tgl_dibuat`) VALUES
@@ -235,12 +259,96 @@ INSERT INTO `menu` (`id_menu`, `judul`, `page`, `parent`, `jenis`, `link`, `id_k
 (58, 'Potensi dan Tantanga', 'home', 48, 'konten', NULL, 21, 'list', '2017-10-02 09:58:42'),
 (59, 'Strategi dan Kebijak', 'home', 48, 'konten', NULL, 22, 'list', '2017-10-02 09:59:26'),
 (60, 'PROGRAM BINA LINGKUN', 'home', 48, 'konten', NULL, 23, 'list', '2017-10-02 10:00:02'),
-(61, 'Gallery', 'home', 0, 'link', 'home/galery', NULL, 'picture-o', '2017-10-02 21:27:53');
+(61, 'Gallery', 'home', 0, 'link', 'home/galery', NULL, 'picture-o', '2017-10-02 21:27:53'),
+(62, 'Metode Uji', 'dashboard', 0, 'link', 'kategori_metode_uji', NULL, '', '2018-02-13 12:09:15'),
+(63, 'Penerimaan Contoh Uji', 'dashboard', 0, 'link', 'form_penerimaan_contoh_uji', NULL, 'file-alt', '2018-02-22 09:48:18');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `portal_app`
+-- Struktur dari tabel `metode_uji`
+--
+
+CREATE TABLE `metode_uji` (
+  `id_metode_uji` int(11) NOT NULL,
+  `nama_metode_uji` varchar(100) NOT NULL,
+  `tgl_dibuat` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `metode_uji`
+--
+
+INSERT INTO `metode_uji` (`id_metode_uji`, `nama_metode_uji`, `tgl_dibuat`) VALUES
+(1, 'Cardiovascular', '2018-02-13 05:12:42'),
+(3, 'Metode Uji 123', '2018-02-13 05:20:57'),
+(4, 'fdsf asdasda', '2018-02-20 08:21:43');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `penerimaan_contoh`
+--
+
+CREATE TABLE `penerimaan_contoh` (
+  `id_penerimaan` int(11) NOT NULL,
+  `no_administrasi` varchar(50) NOT NULL,
+  `tgl_terima` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `nama_atau_instansi_pengirim` varchar(100) NOT NULL,
+  `alamat_pengirim` varchar(100) NOT NULL,
+  `telp_fax_email_pengirim` varchar(50) NOT NULL,
+  `kondisi_uji` enum('Normal','Abnorma','','') NOT NULL,
+  `bentuk` varchar(100) NOT NULL,
+  `warna` varchar(100) NOT NULL,
+  `bau` varchar(100) NOT NULL,
+  `jernih` varchar(100) NOT NULL,
+  `keruh` varchar(100) NOT NULL,
+  `lainnya` varchar(100) NOT NULL,
+  `waktu_pengujian` date NOT NULL,
+  `metode_pengujian` varchar(100) NOT NULL,
+  `sdm` varchar(100) NOT NULL,
+  `peralatan` varchar(100) NOT NULL,
+  `bahan_kimia` varchar(100) NOT NULL,
+  `jumlah_biaya` int(11) NOT NULL,
+  `penerima_contoh` varchar(100) NOT NULL,
+  `status` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `penerimaan_contoh`
+--
+
+INSERT INTO `penerimaan_contoh` (`id_penerimaan`, `no_administrasi`, `tgl_terima`, `nama_atau_instansi_pengirim`, `alamat_pengirim`, `telp_fax_email_pengirim`, `kondisi_uji`, `bentuk`, `warna`, `bau`, `jernih`, `keruh`, `lainnya`, `waktu_pengujian`, `metode_pengujian`, `sdm`, `peralatan`, `bahan_kimia`, `jumlah_biaya`, `penerima_contoh`, `status`) VALUES
+(23, 'tttt', '2018-02-22 07:59:19', 'tttt', 'tttt', 'ttt', 'Abnorma', 'tttt', 'tttt', 'tttt', 'tttt', 'tttt', 'tttt', '2018-03-07', '', '', '', '', 0, '', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `penerimaan_contoh_jenis`
+--
+
+CREATE TABLE `penerimaan_contoh_jenis` (
+  `id_penerimaan_jenis` int(11) NOT NULL,
+  `id_penerimaan` int(11) NOT NULL,
+  `nama_jenis_contoh` varchar(100) NOT NULL,
+  `kode_contoh` varchar(50) NOT NULL,
+  `jumlah_contoh` int(11) NOT NULL,
+  `permintaan_pengujian` varchar(100) NOT NULL,
+  `tgl_dibuat` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `penerimaan_contoh_jenis`
+--
+
+INSERT INTO `penerimaan_contoh_jenis` (`id_penerimaan_jenis`, `id_penerimaan`, `nama_jenis_contoh`, `kode_contoh`, `jumlah_contoh`, `permintaan_pengujian`, `tgl_dibuat`) VALUES
+(25, 23, 'bambu', 'b1', 10, 'suling', '2018-02-22 08:02:21'),
+(26, 23, 'kijang', 'k1', 14, 'suling', '2018-02-22 08:02:21');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `portal_app`
 --
 
 CREATE TABLE `portal_app` (
@@ -254,7 +362,7 @@ CREATE TABLE `portal_app` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `portal_app`
+-- Dumping data untuk tabel `portal_app`
 --
 
 INSERT INTO `portal_app` (`id_portal`, `judul`, `portal_desc`, `url`, `icon`, `id_kat_portal`, `tgl_dibuat`) VALUES
@@ -272,7 +380,7 @@ INSERT INTO `portal_app` (`id_portal`, `judul`, `portal_desc`, `url`, `icon`, `i
 -- --------------------------------------------------------
 
 --
--- Table structure for table `slider`
+-- Struktur dari tabel `slider`
 --
 
 CREATE TABLE `slider` (
@@ -285,7 +393,7 @@ CREATE TABLE `slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `slider`
+-- Dumping data untuk tabel `slider`
 --
 
 INSERT INTO `slider` (`id_slider`, `foto`, `judul`, `slider_desc`, `link`, `tgl_dibuat`) VALUES
@@ -298,7 +406,7 @@ INSERT INTO `slider` (`id_slider`, `foto`, `judul`, `slider_desc`, `link`, `tgl_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
 CREATE TABLE `user` (
@@ -318,7 +426,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id_user`, `nip`, `nama`, `tgl_lahir`, `jenis_kelamin`, `no_telp`, `email`, `alamat`, `foto`, `username`, `password`, `id_role`, `tgl_dibuat`) VALUES
@@ -328,7 +436,7 @@ INSERT INTO `user` (`id_user`, `nip`, `nama`, `tgl_lahir`, `jenis_kelamin`, `no_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_nav`
+-- Struktur dari tabel `user_nav`
 --
 
 CREATE TABLE `user_nav` (
@@ -339,7 +447,7 @@ CREATE TABLE `user_nav` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_nav`
+-- Dumping data untuk tabel `user_nav`
 --
 
 INSERT INTO `user_nav` (`id_role_nav`, `id_role`, `id_menu`, `tgl_dibuat`) VALUES
@@ -373,12 +481,14 @@ INSERT INTO `user_nav` (`id_role_nav`, `id_role`, `id_menu`, `tgl_dibuat`) VALUE
 (68, 2, 12, '2017-07-30 21:28:56'),
 (69, 2, 23, '2017-07-30 21:29:10'),
 (70, 2, 37, '2017-07-30 21:29:19'),
-(71, 1, 52, '2017-09-29 22:22:52');
+(71, 1, 52, '2017-09-29 22:22:52'),
+(72, 1, 62, '2018-02-13 12:09:56'),
+(73, 1, 63, '2018-02-22 09:48:31');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_roles`
+-- Struktur dari tabel `user_roles`
 --
 
 CREATE TABLE `user_roles` (
@@ -389,7 +499,7 @@ CREATE TABLE `user_roles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_roles`
+-- Dumping data untuk tabel `user_roles`
 --
 
 INSERT INTO `user_roles` (`id_role`, `role_name`, `role_desc`, `tgl_dibuat`) VALUES
@@ -447,6 +557,25 @@ ALTER TABLE `menu`
   ADD KEY `parent` (`parent`);
 
 --
+-- Indexes for table `metode_uji`
+--
+ALTER TABLE `metode_uji`
+  ADD PRIMARY KEY (`id_metode_uji`);
+
+--
+-- Indexes for table `penerimaan_contoh`
+--
+ALTER TABLE `penerimaan_contoh`
+  ADD PRIMARY KEY (`id_penerimaan`);
+
+--
+-- Indexes for table `penerimaan_contoh_jenis`
+--
+ALTER TABLE `penerimaan_contoh_jenis`
+  ADD PRIMARY KEY (`id_penerimaan_jenis`),
+  ADD KEY `penerimaan_contoh_jenis_ibfk_1` (`id_penerimaan`);
+
+--
 -- Indexes for table `portal_app`
 --
 ALTER TABLE `portal_app`
@@ -491,96 +620,131 @@ ALTER TABLE `user_roles`
 --
 ALTER TABLE `dokumen`
   MODIFY `id_dokumen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `galery`
 --
 ALTER TABLE `galery`
   MODIFY `id_galery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
 -- AUTO_INCREMENT for table `kategori_dokumen`
 --
 ALTER TABLE `kategori_dokumen`
   MODIFY `id_kat_dokumen` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT for table `kategori_konten`
 --
 ALTER TABLE `kategori_konten`
-  MODIFY `id_kat_konten` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_kat_konten` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
 -- AUTO_INCREMENT for table `kategori_portal`
 --
 ALTER TABLE `kategori_portal`
   MODIFY `id_kat_portal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT for table `konten`
 --
 ALTER TABLE `konten`
   MODIFY `id_konten` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
 --
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+
+--
+-- AUTO_INCREMENT for table `metode_uji`
+--
+ALTER TABLE `metode_uji`
+  MODIFY `id_metode_uji` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `penerimaan_contoh`
+--
+ALTER TABLE `penerimaan_contoh`
+  MODIFY `id_penerimaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `penerimaan_contoh_jenis`
+--
+ALTER TABLE `penerimaan_contoh_jenis`
+  MODIFY `id_penerimaan_jenis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
 --
 -- AUTO_INCREMENT for table `portal_app`
 --
 ALTER TABLE `portal_app`
   MODIFY `id_portal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT for table `slider`
 --
 ALTER TABLE `slider`
   MODIFY `id_slider` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `user_nav`
 --
 ALTER TABLE `user_nav`
-  MODIFY `id_role_nav` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id_role_nav` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+
 --
 -- AUTO_INCREMENT for table `user_roles`
 --
 ALTER TABLE `user_roles`
   MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `dokumen`
+-- Ketidakleluasaan untuk tabel `dokumen`
 --
 ALTER TABLE `dokumen`
   ADD CONSTRAINT `Cons_Dok_Kategori` FOREIGN KEY (`id_kat_dokumen`) REFERENCES `kategori_dokumen` (`id_kat_dokumen`);
 
 --
--- Constraints for table `konten`
+-- Ketidakleluasaan untuk tabel `konten`
 --
 ALTER TABLE `konten`
   ADD CONSTRAINT `Cons_Konten_Kat` FOREIGN KEY (`id_kat_konten`) REFERENCES `kategori_konten` (`id_kat_konten`);
 
 --
--- Constraints for table `portal_app`
+-- Ketidakleluasaan untuk tabel `penerimaan_contoh_jenis`
+--
+ALTER TABLE `penerimaan_contoh_jenis`
+  ADD CONSTRAINT `penerimaan_contoh_jenis_ibfk_1` FOREIGN KEY (`id_penerimaan`) REFERENCES `penerimaan_contoh` (`id_penerimaan`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Ketidakleluasaan untuk tabel `portal_app`
 --
 ALTER TABLE `portal_app`
   ADD CONSTRAINT `Cons_Portal_Kat` FOREIGN KEY (`id_kat_portal`) REFERENCES `kategori_portal` (`id_kat_portal`);
 
 --
--- Constraints for table `user`
+-- Ketidakleluasaan untuk tabel `user`
 --
 ALTER TABLE `user`
   ADD CONSTRAINT `Cons_User_idRole` FOREIGN KEY (`id_role`) REFERENCES `user_roles` (`id_role`);
 
 --
--- Constraints for table `user_nav`
+-- Ketidakleluasaan untuk tabel `user_nav`
 --
 ALTER TABLE `user_nav`
   ADD CONSTRAINT `Cons_Nav_Menu` FOREIGN KEY (`id_menu`) REFERENCES `menu` (`id_menu`),
   ADD CONSTRAINT `Cons_Nav_userRoles` FOREIGN KEY (`id_role`) REFERENCES `user_roles` (`id_role`);
-SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
