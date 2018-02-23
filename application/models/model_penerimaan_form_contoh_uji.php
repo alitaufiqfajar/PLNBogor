@@ -112,7 +112,7 @@ class model_penerimaan_form_contoh_uji extends CI_Model
 
     }
 
-    $this->db->delete("metode_uji");
+    $this->db->delete("penerimaan_contoh");
 
   }
 

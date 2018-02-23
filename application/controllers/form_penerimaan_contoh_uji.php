@@ -94,11 +94,11 @@ class form_penerimaan_contoh_uji extends CI_Controller
 
   {
 
-    $param=array("id_metode_uji"=>$this->uri->segment(3));
+    $param=array("id_penerimaan"=>$this->uri->segment(3));
 
-    $this->model_kategori_metode_uji->delete($param);
+    $this->model_penerimaan_form_contoh_uji->delete($param);
 
-    redirect ('kategori_metode_uji');
+    redirect ('form_penerimaan_contoh_uji');
 
   }
 

@@ -64,6 +64,53 @@
         </thead>
 
         <tbody>
+          <?php
+
+          $no=1;
+
+          foreach ($form_penerimaan->result() as $r) {
+
+            echo '<tr>
+
+              <td>'.$no.'</td>
+
+              <td>'.$r->no_administrasi.'</td>
+
+              <td>'.$r->tgl_terima.'</td>
+
+              <td>'.$r->nama_atau_instansi_pengirim.'</td>
+
+              <td>'.$r->alamat_pengirim.'</td>
+
+              <td>'.$r->telp_fax_email_pengirim.'</td>
+
+              <td>'.$r->kondisi_uji.'</td>
+
+              <td>'.$r->waktu_pengujian.'</td>
+
+              <td>'.$r->jumlah_biaya.'</td>
+
+              <td>'.$r->penerima_contoh.'</td>
+
+              <td>'.$r->status.'</td>
+
+              <td>'.anchor('form_penerimaan_contoh_uji/edit/'.$r->id_penerimaan,'<i class="fa fa-pencil"></i>',
+
+              array('title' => 'Edit','class' => 'btn bg-purple')).' '.
+
+              anchor('form_penerimaan_contoh_uji/delete/'.$r->id_penerimaan,'<i class="fa fa-remove"></i>',
+
+              array('title' => 'Hapus', 'class' => 'btn btn-danger', 'onclick'=>"return confirm('Apakah anda yakin ingin menghapus data ini?')")).'</td>
+
+
+
+            </tr>';
+
+            $no++;
+
+          }
+
+          ?>
 
          
 
