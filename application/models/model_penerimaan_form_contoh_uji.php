@@ -129,5 +129,16 @@ class model_penerimaan_form_contoh_uji extends CI_Model
     return $query;
   }
 
+  function get_detail_contoh_uji($parameter)
+  {
+    $this->db->select('*');
+    $this->db->from('penerimaan_contoh_jenis');
+    $this->db->where('id_penerimaan',$parameter);
+    $query = $this->db->get();
+
+    return $query;
+
+  }
+
 }
 
